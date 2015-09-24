@@ -50,6 +50,7 @@ define("router", [
     
 	   $.ajax({
 	        url: config.baseUrl + "rest/environment/versionandhost",
+	        cache: false,
 	        success: function (data) {
 	        	$("#versionandhost").empty().append(data.text)
 	        },

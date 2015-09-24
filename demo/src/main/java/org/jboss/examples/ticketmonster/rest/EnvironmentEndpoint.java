@@ -12,12 +12,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import org.jboss.examples.ticketmonster.rest.dto.EnvironmentDTO;
+import org.jboss.resteasy.annotations.cache.NoCache;
 
 /**
  * 
  */
 @Stateless
 @Path("/environment")
+@NoCache
 public class EnvironmentEndpoint
 {
 
