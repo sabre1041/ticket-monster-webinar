@@ -44,7 +44,23 @@ define("router", [
             MainTemplate) {
 
     $(document).ready(new function() {
+    
        utilities.applyTemplate($('body'), MainTemplate)
+       
+    
+	   $.ajax({
+	        url: config.baseUrl + "rest/environment/versionandhost",
+	        success: function (data) {
+	        	$("#versionandhost").empty().append(data.text)
+	        },
+	        error: function(jqXHR, textStatus, errorThrown) {
+	        	utilities.displayAlert("Failed to retrieve application version.");
+	        }
+
+	   });
+       
+       
+       
     })
 
     /**
